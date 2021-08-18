@@ -6,6 +6,7 @@
 
 <script>
     export default {
+        name: 'Home',
         methods: {
             logout() {
                 window.sessionStorage.clear();
