@@ -67,28 +67,28 @@
         },
         created() {
             this.getMenuList();
-            this.activePath = window.sessionStorage.getItem('activePath');
+            this.activePath = window.sessionStorage.getItem('activePath')
         },
         methods: {
             logout() {
-                window.sessionStorage.clear();
-                this.$router.push('/login');
+                window.sessionStorage.clear()
+                this.$router.push('/login')
             },
             // 获取所有的菜单
             async getMenuList() {
-                const { data: res } = await this.$http.get('menus');
-                if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
-                this.menulist = res.data;
-                // console.log(res);
+                const { data: res } = await this.$http.get('menus')
+                if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+                this.menulist = res.data
+                // console.log(res)
             },
             // 点击按钮 展开或折叠菜单
             toggleCollapse() {
-                this.isCollapse = !this.isCollapse;
+                this.isCollapse = !this.isCollapse
             },
             // 保存链接的激活状态
             saveNavState(activePath) {
-                window.sessionStorage.setItem('activePath', activePath);
-                this.activePath = activePath;
+                window.sessionStorage.setItem('activePath', activePath)
+                this.activePath = activePath
             }
         }
     };
