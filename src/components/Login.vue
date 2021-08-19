@@ -58,7 +58,7 @@ export default {
             type: 'add',
             num: 2
           })
-          console.log('login: ', this.$store.state.count)
+          // console.log('login: ', this.$store.state.count)
         },
         // 点击重置按钮，重置登录表单
         resetLoginForm() {

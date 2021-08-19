@@ -16,9 +16,9 @@ export default {
   methods: {
     add () {
       // vuex test
-      console.log('app: ', this.$store.state.count)
+      // console.log('app: ', this.$store.state.count)
       this.$store.commit('add', { num: 3 })
-      console.log('app: ', this.$store.state.count)
+      // console.log('app: ', this.$store.state.count)
     }
   },
   created () {
