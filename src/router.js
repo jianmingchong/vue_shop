@@ -25,16 +25,20 @@ const router = new Router({
 
 // 挂载路由导航守卫
 router.beforeEach((to, from, next) => {
-    // to 将要访问的路径
-    // from 代表从哪个路径跳转而来
-    // next 是一个函数 表示放行
-    // next() 放行  next('/login) 强制跳转
+  // to 将要访问的路径
+  // from 代表从哪个路径跳转而来
+  // next 是一个函数 表示放行
+  // next() 表示放行  next('/login) 表示强制跳转 next(false) 表示强制停留当前也
 
-    if (to.path === '/login') return next()
-    // 获取token
-    const tokenStr = window.sessionStorage.getItem('token')
-    if (!tokenStr) return next('/login')
-    next()
+  if (to.path === '/login') { // 访问登录页 直接放行
+    return next()
+  }
+  // 获取token
+  const tokenStr = window.sessionStorage.getItem('token')
+  if (!tokenStr) {
+    return next('/login')
+  }
+  next()
 })
 
 export default router
