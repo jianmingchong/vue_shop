@@ -24,6 +24,7 @@
 
 <script>
 export default {
+    name: 'Login',
     data() {
         return {
             // 登录表单的数据绑定对象
@@ -43,10 +44,24 @@ export default {
             }
         }
     },
+    computed: {
+      // vuex test
+        count () {
+          return this.$store.state.count
+        }
+    },
     methods: {
+      // vuex test
+        add () {
+          // this.$store.commit('add', { num: 2 })
+          this.$store.commit({
+            type: 'add',
+            num: 2
+          })
+          console.log('login: ', this.$store.state.count)
+        },
         // 点击重置按钮，重置登录表单
         resetLoginForm() {
-            // console.log(this);
             this.$refs.loginFormRef.resetFields();
         },
         login() {
@@ -54,7 +69,9 @@ export default {
                 if (!valid) return;
                 const { data: res } = await this.$http.post('login', this.loginForm);
                 // console.log(res);
-                if (res.meta.status !== 200) return this.$message.error('登录失败');
+                if (res.meta.status !== 200) {
+                  return this.$message.error('登录失败');
+                }
                 this.$message.success('登录成功');
                 // 1. 将登录成功之后的 token，保存到客户端的 sessionStorage 中
                 //   1.1 项目中出了登录之外的其他API接口，必须在登录之后才能访问

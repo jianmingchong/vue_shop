@@ -8,8 +8,10 @@ import './assets/fonts/iconfont.css'
 import './assets/css/global.css'
 
 import axios from 'axios'
+import store from './store'
 // 配置请求根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/' // 白嫖 API 接口地址
 // 将 axios 挂载到 Vue 原型上
 Vue.prototype.$http = axios
 
@@ -17,5 +19,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
