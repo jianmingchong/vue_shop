@@ -355,7 +355,7 @@ export default {
                 return this.$message.error('请选择要分配的角色')
             }
             const { data: res } = await this.$http.put(`users/${this.userInfo.id}/role`, { rid: this.selectRoleId })
-            // console.log('role: ', res) // 分配用户角色接口被做了处理 返回400
+            // console.log('role: ', res) // 分配用户角色接口被做了处理 返回400 （换API）
             if (res.meta.status !== 200) {
                 return this.$message.error('更新用户角色失败！')
             }
