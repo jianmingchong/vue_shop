@@ -72,6 +72,7 @@
                     :options="parentCateList"
                     :props="cascaderProps"
                     @change="parentCateChanged"
+                    style="width: 100%"
                     clearable
                     filterable
                 ></el-cascader>
@@ -193,7 +194,7 @@ export default {
             if (res.meta.status !== 200) {
                 return this.$message.error('获取商品分类失败！')
             }
-            console.log(res)
+            // console.log(res)
             // 给数据列表赋值
             this.cateList = res.data.result
             // 总数据条数
@@ -302,4 +303,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+    .treeTable {
+        margin-top: 20px;
+    }
 </style>

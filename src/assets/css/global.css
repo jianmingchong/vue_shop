@@ -25,3 +25,8 @@ body,
 .el-pagination {
     margin-top: 15px;
 }
+
+/* 解决级联选择框的问题 */
+div .el-scrollbar__wrap {
+    height: 300px !important
+}
