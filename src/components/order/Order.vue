@@ -17,7 +17,7 @@
             </el-row>
             <!-- 表格 -->
             <el-table :data="orderlist" border stripe>
-                <el-table-column type="index"></el-table-column>
+                <el-table-column type="index" label="#"></el-table-column>
                 <el-table-column label="订单编号" prop="order_number"></el-table-column>
                 <el-table-column label="订单价格" prop="order_price"></el-table-column>
                 <el-table-column label="是否付款" prop="pay_status">
