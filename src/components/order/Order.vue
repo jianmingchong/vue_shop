@@ -6,7 +6,7 @@
             <el-breadcrumb-item>用户管理</el-breadcrumb-item>
             <el-breadcrumb-item>用户列表</el-breadcrumb-item>
         </el-breadcrumb>
-        // 卡片视图
+        <!-- 卡片视图 -->
         <el-card>
             <el-row>
                 <el-col :span="8">
@@ -43,7 +43,7 @@
                     </template>
                 </el-table-column>
             </el-table>
-            // 分页
+            <!-- 分页 -->
             <el-pagination
                 @size-change="handleSizeChange"
                 @current-change="handleCurrentChange"
@@ -53,7 +53,7 @@
                 layout="total, sizes, prev, pager, next, jumper"
                 :total="total">
             </el-pagination>
-            // 修改地址对话框
+            <!-- 修改地址对话框 -->
             <el-dialog
                 title="修改地址"
                 :visible.sync="addressVisible"
@@ -72,7 +72,7 @@
                     <el-button type="primary" @click="addressVisible = false">确 定</el-button>
                 </span>
             </el-dialog>
-            // 展示物流对话框
+            <!-- 展示物流对话框 -->
             <el-dialog
                 title="物流进度"
                 :visible.sync="progressVisible"
